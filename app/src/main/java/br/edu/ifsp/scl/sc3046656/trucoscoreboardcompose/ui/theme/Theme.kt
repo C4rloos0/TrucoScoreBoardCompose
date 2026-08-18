@@ -1,6 +1,5 @@
-package br.edu.ifsp.scl.sc3046656.trucoscoreboard.ui.theme
+package br.edu.ifsp.scl.sc3046656.trucoscoreboardcompose.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

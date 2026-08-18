@@ -1,4 +1,4 @@
-package br.edu.ifsp.scl.sc3046656.trucoscoreboard
+package br.edu.ifsp.scl.sc3046656.trucoscoreboardcompose
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

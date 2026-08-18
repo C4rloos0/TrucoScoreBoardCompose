@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "br.edu.ifsp.scl.sc3046656.trucoscoreboard"
+    namespace = "br.edu.ifsp.scl.sc3046656.trucoscoreboardcompose"
     compileSdk {
         version = release(35)
     }

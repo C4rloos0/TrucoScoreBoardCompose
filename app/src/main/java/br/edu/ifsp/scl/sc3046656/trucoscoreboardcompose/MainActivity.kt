@@ -1,4 +1,4 @@
-package br.edu.ifsp.scl.sc3046656.trucoscoreboard
+package br.edu.ifsp.scl.sc3046656.trucoscoreboardcompose
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -22,7 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import br.edu.ifsp.scl.sc3046656.trucoscoreboard.ui.theme.TrucoScoreBoardTheme
+import br.edu.ifsp.scl.sc3046656.trucoscoreboardcompose.ui.theme.TrucoScoreBoardTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,13 +59,13 @@ fun TelaComDoisContadores(modifier: Modifier = Modifier) {
                 .fillMaxWidth()
         )
 
-
         Button(
             modifier = Modifier.fillMaxWidth(),
-            onClick = {counterA = 0; counterB = 0}
-            ) {
+            onClick = {counterA=0;counterB=0}
+        ) {
             Text("Reiniciar pontos")
         }
+
 
         ContadorTimeB(
             counterA = counterA,
@@ -210,12 +210,4 @@ fun ContadorTimeB(counterA : Int,
 
     }
 }
-
-//@Preview(showBackground = true)
-//@Composable
-//fun ContadorTimeAPreview(){
-//    TrucoScoreBoardTheme(){
-//        ContadorTimeA(modifier = Modifier)
-//    }
-//}
 

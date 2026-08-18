@@ -1,4 +1,4 @@
-package br.edu.ifsp.scl.sc3046656.trucoscoreboard.ui.theme
+package br.edu.ifsp.scl.sc3046656.trucoscoreboardcompose.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
