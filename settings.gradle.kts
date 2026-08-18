@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TrucoScoreBoard"
+rootProject.name = "TrucoScoreBoardCompose"
 include(":app")
