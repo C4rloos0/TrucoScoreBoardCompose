@@ -3,7 +3,6 @@ package br.edu.ifsp.scl.sc3046656.trucoscoreboardcompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -27,7 +26,6 @@ import br.edu.ifsp.scl.sc3046656.trucoscoreboardcompose.ui.theme.TrucoScoreBoard
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             TrucoScoreBoardTheme {
                 TelaComDoisContadores(modifier = Modifier)
