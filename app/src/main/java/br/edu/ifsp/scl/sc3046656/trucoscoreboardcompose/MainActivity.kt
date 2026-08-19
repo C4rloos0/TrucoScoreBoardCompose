@@ -21,13 +21,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import br.edu.ifsp.scl.sc3046656.trucoscoreboardcompose.ui.theme.TrucoScoreBoardTheme
+import br.edu.ifsp.scl.sc3046656.trucoscoreboardcompose.ui.theme.TrucoScoreBoardComposeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TrucoScoreBoardTheme {
+            TrucoScoreBoardComposeTheme {
                 TelaComDoisContadores(modifier = Modifier)
             }
         }
@@ -107,7 +107,7 @@ fun TelaComDoisContadores(modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun TelaComDoisContadoresPreview(){
-    TrucoScoreBoardTheme {
+    TrucoScoreBoardComposeTheme {
         TelaComDoisContadores(modifier = Modifier)
     }
 }
