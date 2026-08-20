@@ -43,41 +43,43 @@ fun TelaComDoisContadores(modifier: Modifier = Modifier) {
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-        ContadorTimeA(
-            counterA = counterA,
-            counterB = counterB,
-            onIncrementarUm = {
-                counterA = (counterA + 1).coerceAtMost(12)
-            },
-            onIncrementarTres = {
-                counterA = (counterA + 3).coerceAtMost(12)
-            },
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth()
-        )
+        if(counterA < 12 && counterB < 12){
+            ContadorTimeA(
+                counterA = counterA,
+                onIncrementarUm = {
+                    counterA = (counterA + 1).coerceAtMost(12)
+                },
+                onIncrementarTres = {
+                    counterA = (counterA + 3).coerceAtMost(12)
+                },
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth()
+            )
 
-        Button(
-            modifier = Modifier.fillMaxWidth(),
-            onClick = {counterA=0;counterB=0}
-        ) {
-            Text("Reiniciar pontos")
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = {counterA=0;counterB=0}
+            ) {
+                Text("Reiniciar pontos")
+            }
+
+
+            ContadorTimeB(
+                counterB = counterB,
+                onIncrementarUm = {
+                    counterB = (counterB + 1).coerceAtMost(12)
+                },
+                onIncrementarTres = {
+                    counterB = (counterB + 3).coerceAtMost(12)
+                },
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth()
+            )
+
         }
 
-
-        ContadorTimeB(
-            counterA = counterA,
-            counterB = counterB,
-            onIncrementarUm = {
-                counterB = (counterB + 1).coerceAtMost(12)
-            },
-            onIncrementarTres = {
-                counterB = (counterB + 3).coerceAtMost(12)
-            },
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth()
-        )
         if(counterA == 12){
             AlertDialog(
                 onDismissRequest = {},
@@ -114,7 +116,6 @@ fun TelaComDoisContadoresPreview(){
 
 @Composable
 fun ContadorTimeA(counterA : Int,
-                  counterB: Int,
                   onIncrementarUm : () -> Unit,
                   onIncrementarTres : () -> Unit,
                   modifier: Modifier = Modifier){
@@ -124,23 +125,23 @@ fun ContadorTimeA(counterA : Int,
         verticalArrangement = Arrangement.Top
     ){
 
-        if(counterB < 12 && counterA < 12){
+        if(counterA != 11){
             Button(
                 modifier = Modifier.fillMaxWidth(),
                 onClick = onIncrementarTres
             ){
                 Text(text = "Mais três")
             }
-
-            if(counterA != 11 && counterB != 11){
-                Button(
-                    modifier = Modifier.fillMaxWidth(),
-                    onClick = onIncrementarUm
-                ){
-                    Text(text = "Mais um")
-                }
-            }
         }
+
+        Button(
+            modifier = Modifier.fillMaxWidth(),
+            onClick = onIncrementarUm
+        ){
+            Text(text = "Mais um")
+        }
+
+
 
 
 
@@ -163,8 +164,7 @@ fun ContadorTimeA(counterA : Int,
 }
 
 @Composable
-fun ContadorTimeB(counterA : Int,
-                  counterB: Int,
+fun ContadorTimeB(counterB: Int,
                   onIncrementarUm : () -> Unit,
                   onIncrementarTres : () -> Unit,
                   modifier: Modifier = Modifier){
@@ -186,16 +186,15 @@ fun ContadorTimeB(counterA : Int,
 
         Spacer(modifier = Modifier.weight(1f))
 
-        if (counterA < 12 && counterB < 12){
-            if(counterA != 11 && counterB != 11){
-                Button(
-                    modifier = Modifier.fillMaxWidth(),
-                    onClick = onIncrementarUm)
-                {
-                    Text(text = "Mais um")
-                }
-            }
 
+        Button(
+            modifier = Modifier.fillMaxWidth(),
+            onClick = onIncrementarUm)
+        {
+            Text(text = "Mais um")
+        }
+
+        if(counterB != 11){
             Button(
                 modifier = Modifier.fillMaxWidth(),
                 onClick = onIncrementarTres
@@ -203,8 +202,6 @@ fun ContadorTimeB(counterA : Int,
                 Text(text = "Mais três")
             }
         }
-
-
 
     }
 }
